@@ -1,10 +1,12 @@
 <template>
+    <div>
+        <!-- Success Message -->
+        <p v-if="successMessage" class="bg-green-500 text-white p-2 mt-4"><i class="pi pi-check px-2"></i>{{ successMessage }}</p>
     <div class="mt-5">
         <h1 class="text-3xl font-bold mb-6">Create Post</h1>
         <form @submit.prevent="createPost" enctype="multipart/form-data">
             <div class="flex gap-4">
                 <div>
-                    <!-- Title Input -->
                     <input
                         v-model="title"
                         type="text"
@@ -13,7 +15,6 @@
                         required
                     />
 
-                    <!-- Image Upload -->
                     <input
                         type="file"
                         class="w-full border p-2 mb-4"
@@ -22,7 +23,6 @@
                         required
                     />
 
-                    <!-- Image Preview -->
                     <img
                         :src="imageUrl || defaultImage"
                         alt="Image Preview"
@@ -30,7 +30,6 @@
                     />
                 </div>
 
-                <!-- Content Textarea -->
                 <textarea
                     v-model="content"
                     class="w-full border border-gray-500 rounded-md p-2 mb-4"
@@ -43,11 +42,9 @@
             <button class="bg-blue-500 text-white p-2 rounded-md" type="submit">
                 Create
             </button>
-        </form>
-
-        <!-- Success Message -->
-        <p v-if="successMessage" class="text-green-500 mt-4">{{ successMessage }}</p>
+        </form>  
     </div>
+</div>
 </template>
 
 <script>
