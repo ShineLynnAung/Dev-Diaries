@@ -1,6 +1,8 @@
 <template>
   <div class="my-5">
-    <img key="post.id" :src="post.path" alt="post.title" class=" object-cover">
+    <div class="flex justify-center">
+      <img key="post.id" :src="post.path" alt="post.title" class="w-[50%] object-cover">
+    </div>
     <h1 class="text-3xl font-bold mt-6 mb-6">{{ post.title }}</h1>
     <p class="text-base/8">{{ post.content }}</p>
   </div>
