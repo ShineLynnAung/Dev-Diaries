@@ -4,7 +4,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div v-for="post in posts" :key="post.id" class="border border-rounded border-lg shadow-lg overflow-hidden">
                 <router-link :to="{ name: 'details', params: { id: post.id } }">
-                    <img :src="post.path" alt="post.title" class="w-full h-40 object-cover">
+                    <img :src="post.path" :alt="post.title" class="w-full h-40 object-cover">
                 <div class="p-4">
                     <h2 class="text-xl font-semibold mb-2">{{ post.title }}</h2>
                 </div>
